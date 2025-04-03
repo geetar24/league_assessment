@@ -62,8 +62,8 @@ mvn -v  # Expected: "Apache Maven 3.8.x"
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git clone https://github.com/geetar24/league_assessment
+cd league_assessment
 ```
 
 ### Start Spring Boot Backend
