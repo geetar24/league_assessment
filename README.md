@@ -9,22 +9,19 @@ Windows:
 Download from Oracle JDK 17 → Run installer → Set JAVA_HOME.
 
 macOS/Linux:
-
-bash
-Copy
 brew install openjdk@17  # macOS
 sudo apt install openjdk-17-jdk  # Linux
 Verify:
 
 bash
-Copy
+ 
 java -version  # Expected: "17.x.x"
 Node.js 16+ & npm (Frontend)
 Download from Node.js → Run installer.
 Verify:
 
 bash
-Copy
+ 
 node -v  # Expected: "v16.x.x" or higher
 npm -v   # Expected: "8.x.x" or higher
 Maven (Backend Build)
@@ -33,40 +30,35 @@ Windows: Download Maven → Unzip → Set MAVEN_HOME.
 macOS/Linux:
 
 bash
-Copy
 brew install maven  # macOS
 sudo apt install maven  # Linux
 Verify:
 
 bash
-Copy
 mvn -v  # Expected: "Apache Maven 3.8.x"
 🚀 Running the Application
 1. Clone the Repository
 bash
-Copy
+ 
 git clone https://github.com/your-username/your-repo.git
 cd your-repo
 2. Start Spring Boot Backend
-bash
-Copy
+bash 
 cd matrix-backend
 mvn clean install  # Build dependencies
 mvn spring-boot:run  # Start server
 ✅ Expected Output:
 
-Copy
+ 
 Tomcat started on port(s): 8081
 Started MatrixApplication in 2.305 seconds
 Test Backend:
 
-bash
-Copy
+bash 
 curl http://localhost:8081/api/hello
 # Expected: "Backend is running!"
 3. Start React Frontend
 bash
-Copy
 cd ../frontend
 npm install  # Install dependencies
 npm start   # Launch development server
@@ -75,14 +67,13 @@ npm start   # Launch development server
 Automatically opens http://localhost:3000 in browser.
 
 Console shows:
-
-Copy
+ 
 Compiled successfully!
 🖥️ Using the Application
 1. Prepare a CSV File
 Create matrix.csv:
 
-Copy
+ 
 1,2,3
 4,5,6
 7,8,9
@@ -90,18 +81,13 @@ Copy
 Upload matrix.csv via the React interface.
 
 Select Operation:
-
 Echo
-Expected Output:
-
-Copy
+Expected Output: 
 1,2,3
 4,5,6
 7,8,9
 Invert
-Expected Output:
-
-Copy
+Expected Output: 
 1,4,7
 2,5,8
 3,6,9
@@ -110,7 +96,7 @@ Expected Output: 45
 
 3. Command-Line Testing (Optional)
 bash
-Copy
+ 
 # Echo
 curl -X POST -F "file=@matrix.csv" http://localhost:8081/api/echo
 
@@ -127,13 +113,11 @@ Maven build errors	Run mvn clean install -U
 
 📦 Production Build
 Backend (JAR)
-bash
-Copy
+bash 
 cd matrix-backend
 mvn clean package
 java -jar target/matrix-backend-0.0.1-SNAPSHOT.jar
 Frontend (Optimized Build)
-bash
-Copy
+bash 
 cd frontend
 npm run build  # Outputs to /build
